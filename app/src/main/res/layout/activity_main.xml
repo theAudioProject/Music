@@ -60,7 +60,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="40dp"
         android:layout_below="@id/top_pannel"
         android:orientation="horizontal"
         android:background="#03A9F4"
@@ -75,31 +75,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
+                <Button
                     android:id="@+id/one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="15sp"
                     android:text="Songs"
+                    android:background="@android:color/transparent"
                     android:textColor="#000"
                     android:textSize="10dp"
                     android:textStyle="bold" />
 
-                <TextView
+                <Button
                     android:id="@+id/two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/one"
                     android:text="Album"
                     android:textColor="#000"
                     android:textSize="10dp"
+                    android:background="@android:color/transparent"
                     android:textStyle="bold" />
 
-                <TextView
+                <Button
                     android:id="@+id/three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,9 +108,10 @@
                     android:layout_toRightOf="@id/two"
                     android:text="Artist"
                     android:textColor="#000"
+                    android:background="@android:color/transparent"
                     android:textSize="10dp"
                     android:textStyle="bold" />
-                <TextView
+                <Button
                     android:id="@+id/four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -118,40 +119,41 @@
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/three"
                     android:text="Genre"
+                    android:background="@android:color/transparent"
                     android:textColor="#000"
                     android:textSize="10dp"
                     android:textStyle="bold" />
-                <TextView
+                <Button
                     android:id="@+id/five"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/four"
                     android:text="Playlist"
                     android:textColor="#000"
                     android:textSize="10dp"
+                    android:background="@android:color/transparent"
                     android:textStyle="bold" />
-                <TextView
+                <Button
                     android:id="@+id/six"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/five"
                     android:text="Folder"
                     android:textColor="#000"
+                    android:background="@android:color/transparent"
                     android:textSize="10dp"
                     android:textStyle="bold" />
 
-                <TextView
+                <Button
                     android:id="@+id/seven"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@id/six"
                     android:text="Favourite"
+                    android:background="@android:color/transparent"
                     android:textColor="#000"
                     android:textSize="10dp"
                     android:textStyle="bold" />
