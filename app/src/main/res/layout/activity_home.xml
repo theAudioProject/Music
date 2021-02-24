@@ -63,24 +63,80 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/top_pannel">
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
+        android:layout_below="@id/top_pannel"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#03A9F4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabMode="scrollable"
+            app:tabTextColor="#000">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:tabMode="scrollable"
-                app:tabTextColor="#000"
-                android:background="#03A9F4" />
+                android:text="@string/tab1" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab3" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab4" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab5" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab6" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/home_tab7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab7" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabs" />
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
