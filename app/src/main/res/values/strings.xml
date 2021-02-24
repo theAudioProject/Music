@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Musicplayer</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab1">Songs</string>
+    <string name="tab2">Album</string>
+    <string name="tab3">Artist</string>
+    <string name="tab4">Genre</string>
+    <string name="tab5">Playlist</string>
+    <string name="tab6">Folder</string>
+    <string name="tab7">Favourite</string>
+
+
+
+
+    <string name="title_activity_home">home</string>
 </resources>
