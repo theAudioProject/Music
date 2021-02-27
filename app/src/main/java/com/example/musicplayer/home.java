@@ -1,5 +1,7 @@
 package com.example.musicplayer;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.example.musicplayer.ui.main.PageAdapter;
@@ -8,6 +10,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -17,12 +22,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 //import com.example.musicplayer.ui.main.SectionsPagerAdapter;
 
 public class home extends AppCompatActivity {
 
     private static final String TAG = "home";
+    private int STORAGE_PERMISSION_CODE = 1;
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
@@ -33,8 +40,10 @@ public class home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
 
+        RequestPermission();
+
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabSongs = (TabItem) findViewById(R.id.home_tab1);
         tabAlbum = (TabItem) findViewById(R.id.home_tab2);
         tabArtist = (TabItem) findViewById(R.id.home_tab3);
@@ -111,5 +120,24 @@ public class home extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+    }
+
+    private void RequestPermission() {
+        if(!(ContextCompat.checkSelfPermission(home.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == STORAGE_PERMISSION_CODE) {
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(home.this, "Storage Permission Granted", Toast.LENGTH_SHORT);
+            }
+            else {
+                Toast.makeText(home.this, "Please grant storage permission", Toast.LENGTH_SHORT);
+                RequestPermission();
+            }
+        }
     }
 }
